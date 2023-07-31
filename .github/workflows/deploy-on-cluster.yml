@@ -17,4 +17,6 @@ jobs:
       run: |
         mkdir ${HOME}/.kube
     - name: Copy kubeconfig
-      run: echo ${{ secrets.KUBE_CONFIG }}
+      run: export KUBECONFIG=${{ secrets.KUBE_CONFIG }}
+    - name: Get PO
+      run: kubectl get po -A  
