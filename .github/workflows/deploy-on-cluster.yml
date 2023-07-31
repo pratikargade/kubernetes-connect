@@ -16,3 +16,5 @@ jobs:
     - name: Create kubeconfig
       run: |
         mkdir ${HOME}/.kube
+    - name: Copy kubeconfig
+      run: echo ${{ secrets.KUBE_CONFIG }} > ${HOME}/.kube/config    
